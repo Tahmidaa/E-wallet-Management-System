@@ -1,5 +1,6 @@
- //Hadil 1618880
+ 
 <?php
+//Hadil 1618880
    session_start(); 
 
    if(isset($_SESSION['login_user'])){
