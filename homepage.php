@@ -206,10 +206,10 @@ array_push($_SESSION['transactions'], $wallet_transac);
 echo "<table class='table' table border='5' width='1250' margin-left: 'auto'
 margin-right:'auto' cellspacing='6' cellpadding ='6'>";
 echo "<tr bgcolor =' #1abc9c'>";
-echo "<th>Balance</th>";
-echo "<th>Payment</th>";
-echo "<th>Date of transaction</th>";
-echo "<th>Remaining balance</th>";
+echo "<th><center>Balance</center></th>";
+echo "<th><center>Payment</center></th>";
+echo "<th><center>Date of transaction</center></th>";
+echo "<th><center>Remaining balance</center></th>";
 echo "</tr>";
 
 //loop
