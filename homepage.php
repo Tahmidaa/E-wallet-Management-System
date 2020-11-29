@@ -71,36 +71,25 @@ if(!isset($_SESSION['login_user'])){
 
   <br>
  
- <!--**Sehrish Kantroo 1726406 -->
+ <!--**Sehrish Kantroo 1726406{ -->
   <div class="container0">
     <table cellspacing='10' cellpadding ='0'>
     <td><form method = "post">
-  
-      
-      <input type="text" id="bal" name="bal" placeholder="Add balance.."required />
-  
-      
-  
-      <button type="submit" id="button1" name="button"> TopUp</button>
+     <input type="text" id="bal" name="bal" placeholder="Add balance.."required />
+     <button type="submit" id="button1" name="button"> TopUp</button>
   
     </form>
     </td>
     
     <td><form method = "post" >
-    
-      
-      
-      <input type="text" id="pay" name="payment" placeholder="Make Payment.." required />
-      
-      
-  
-      <button type="submit" id="button2" name="button"> Pay</button>
+    <input type="text" id="pay" name="payment" placeholder="Make Payment.." required />
+    <button type="submit" id="button2" name="button"> Pay</button>
     
   
     </form>
     </td>
     </table>
-  </div>  <!--** -->
+  </div>  <!--**} -->
     
   <div class="container0" style="width: 700px;">
     <table cellspacing='10' cellpadding ='0'>  
@@ -251,7 +240,7 @@ echo "</table>";
 ?> //**}
   
   
-//Tahmida-1819216 
+ <!--Tahmida-1819216 -->
   
 <!DOCTYPE html>
 <html>
