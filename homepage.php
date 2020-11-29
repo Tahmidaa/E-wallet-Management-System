@@ -19,6 +19,8 @@ if(!isset($_SESSION['login_user'])){
   }
 ?>
 
+ /*Sehrish Kantroo-1726406*/
+
 
 <!DOCTYPE html> 
 <html lang="en" dir="ltr">
@@ -69,7 +71,7 @@ if(!isset($_SESSION['login_user'])){
 
   <br>
  
- //Sehrish Kantroo-1726406
+ /*Sehrish Kantroo-1726406*/
     
   <div class="container0">
     <table cellspacing='10' cellpadding ='0'>
@@ -111,7 +113,7 @@ if(!isset($_SESSION['login_user'])){
     </table>
   </div>
 
- //Sehrish Kantroo-1726406
+ /*Sehrish Kantroo-1726406*/
 <?php
 
 error_reporting (E_ALL ^ E_NOTICE);  
@@ -122,8 +124,8 @@ $payment = $_POST["payment"];
 $credit_card = $_POST["credit_card"];
 $date_of_transaction = date("Y-m-d");
 
-date_default_timezone_set("Asia/Kuala_Lumpur"); //Tahmida-1819216
-$time_of_transaction = date("H:i:s"); //Tahmida-1819216
+date_default_timezone_set("Asia/Kuala_Lumpur"); /*Tahmida-1819216*/
+$time_of_transaction = date("H:i:s"); /*Tahmida-1819216*/
 
 if(!isset($_SESSION['bal']))
   {
@@ -139,19 +141,19 @@ if(!isset($_SESSION['bal']))
      $balance = $_SESSION['bal'];
   }
 
- //Sehrish Kantroo-1726406
+ /*Sehrish Kantroo-1726406*/
 if($balance >= $payment){
     $remaining_balance = $balance - $payment;
     $_SESSION['bal']= $remaining_balance;
-    $status = "Successful";  //Tahmida-1819216
+    $status = "Successful";  /*Tahmida-1819216*/
 }else{
   $payment = 0;
   $remaining_balance = $balance;
-  $status = "Unsuccessful";  //Tahmida-1819216
+  $status = "Unsuccessful";  /*Tahmida-1819216*/
 
 echo "<p style='color:red;font-size:20px' font-style:bold>You dont have sufficient balance to make payment. Please topup your account.</p>";
 }
-     //---Tahmida-1819216---
+     /*Tahmida-1819216*/
 if($_payment =  $credit_card){
 
   $payment_type = "Credit Card";
@@ -177,7 +179,7 @@ if($date_of_transaction >= $start && $date_of_transaction <= $end) {
 }
 $date_of_transaction = date("Y-m-d H:i:s ");
 
-     //---Sehrish Kantroo-1726406---
+     /*---Sehrish Kantroo-1726406---*/
 //object
 $wallet_transac = new wallet();
 $wallet_transac->balance = $balance;
@@ -234,7 +236,7 @@ echo"</div>";
 echo "</table>";
 ?>
     
-   //---Tahmida-1819216--- 
+   /*---Tahmida-1819216---*/
 <!DOCTYPE html>
 <html>
 <body>
