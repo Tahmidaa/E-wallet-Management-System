@@ -154,6 +154,9 @@ if($balance >= $payment){
 
 echo "<p style='color:red;font-size:20px' font-style:bold>You dont have sufficient balance to make payment. Please topup your account.</p>";
 }
+ 
+//Tahmida-1819216  
+  
 if($_payment =  $credit_card){
 
   $payment_type = "Credit Card";
@@ -233,6 +236,9 @@ echo "<label> Available Balance: $_remBal </label>";
 echo"</div>";
 echo "</table>";
 ?>
+  
+//Tahmida-1819216 
+  
 <!DOCTYPE html>
 <html>
 <body>
@@ -247,10 +253,6 @@ echo "<th>Payment</th>";
 echo "<th>Date of transaction</th>";
 echo "<th>Payment type</th>";
 echo "<th>Payment Status</th>";
-
-
-
-
 
 echo "</tr>";
 
