@@ -226,10 +226,10 @@ $_remBal = $item->remainingBal;
 
 
 echo "<tr>";
-echo " <td><center> $_balance  </center></td> ";
-echo " <td><center>$$_payment</center></td> ";
-echo " <td><center>$_dot</center></td> ";
-echo " <td><center>$_remBal</center></td> ";
+echo " <td><center>RM $_balance  </center></td> ";
+echo " <td><center>RM $_payment</center></td> ";
+echo " <td><center> $_dot</center></td> ";
+echo " <td><center>RM $_remBal</center></td> ";
 echo "</tr>";
 
 }
@@ -270,7 +270,7 @@ $_status = $item->status;
 
 
 
-echo " <td><center>$$_payment</center></td> ";
+echo " <td><center>RM $_payment</center></td> ";
 echo " <td><center>$_dot</center></td> ";
 echo " <td><center>$_paymenttype</center></td> ";
 echo " <td><center>$_status</center></td> ";
