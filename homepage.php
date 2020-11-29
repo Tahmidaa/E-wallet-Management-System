@@ -1,27 +1,30 @@
 
-          <?php session_start(); 
+<?php session_start(); 
 
-
+//Hadil Mohammed Almekhkafi 1618880
 if(!isset($_SESSION['login_user'])){
   header("location:login.php");
   die();
 } 
 
+
+//**Sehrish Kantroo-1726406{
  class wallet{
 
   public $balance=0;
   public $payment=0;
   public $dot;
-  public $remainingBal=0;
-  public $payment_type;
-  public $status;
+  public $remainingBal=0; //**}
+
+  public $payment_type; //Tahmida Haque Sumbula-1819216
+  public $status; //Tahmida Haque Sumbula-1819216
   
   }
 ?>
 
- /*Sehrish Kantroo-1726406*/
+ 
 
-
+<!--Hadil Mohammed Almekhkafi 1618880-->
 <!DOCTYPE html> 
 <html lang="en" dir="ltr">
 
@@ -71,89 +74,88 @@ if(!isset($_SESSION['login_user'])){
 
   <br>
  
- /*Sehrish Kantroo-1726406*/
-    
+ 
+  <!-- **Sehrish Kantroo-1726406{ -->
   <div class="container0">
     <table cellspacing='10' cellpadding ='0'>
     <td><form method = "post">
-  
-      
-      <input type="text" id="bal" name="bal" placeholder="Add balance.."required />
-  
-      
-  
-      <button type="submit" id="button1" name="button"> TopUp</button>
-  
-    </form>
+    <input type="text" id="bal" name="bal" placeholder="Add balance.."required />
+    <button type="submit" id="button1" name="button"> TopUp</button>
+   </form>
     </td>
     
     <td><form method = "post" >
-    
-      
-      
-      <input type="text" id="pay" name="payment" placeholder="Make Payment.." required />
-      
-      
-  
-      <button type="submit" id="button2" name="button"> Pay</button>
-    
-  
+    <input type="text" id="pay" name="payment" placeholder="Make Payment.." required />
+    <button type="submit" id="button2" name="button"> Pay</button>
     </form>
     </td>
     </table>
-  </div>
+  </div> <!-- **} -->
+
+  <!--Hadil Mohammed Almekhkafi 1618880 -->
   <div class="container0" style="width: 700px;">
     <table cellspacing='10' cellpadding ='0'>  
     <td><form method = "post" >
       <input type="hidden"  name="credit_card" value="credit_card"/>
       <input type="text" style="width: 90%;" id="bal" name="credit_card" placeholder="Add balance.." required />
-      <button type="submit" id="button2" style="width: 200px;" name="button"> Credit</button>
+      <button type="submit" id="button2" style="width: 200px;" name="button">TopUp via Credit Card</button>
     </form>
     </td>
     </table>
   </div>
 
- /*Sehrish Kantroo-1726406*/
-<?php
 
+<?php
+//**Sehrish Kantroo-1726406{
 error_reporting (E_ALL ^ E_NOTICE);  
 
 
 $bal = $_POST["bal"];
 $payment = $_POST["payment"];
 $credit_card = $_POST["credit_card"];
-$date_of_transaction = date("Y-m-d");
+$date_of_transaction = date("Y-m-d");//** }
 
-date_default_timezone_set("Asia/Kuala_Lumpur"); /*Tahmida-1819216*/
-$time_of_transaction = date("H:i:s"); /*Tahmida-1819216*/
+date_default_timezone_set("Asia/Kuala_Lumpur"); //Tahmida-1819216
+$time_of_transaction = date("H:i:s"); //Tahmida-1819216
 
+//**Sehrish Kantroo-1726406{
 if(!isset($_SESSION['bal']))
   {
   $_SESSION['bal'] = 0;
   }
- 
+ //** }
 
+ //Hadil Mohammed Almekhkafi 1618880{
   if(isset($credit_card)){
     $_SESSION['bal']= $_SESSION['bal'] + $credit_card + 0.5;
     $balance = $_SESSION['bal'];
+    echo "<p style='color:blue;font-size:20px' font-style:bold>You have recieved RM 0.50 cash back.</p>";// }
   }else{
-     $_SESSION['bal']= $_SESSION['bal'] + $bal;
+
+    //**Sehrish Kantroo-1726406{
+     $_SESSION['bal']= $_SESSION['bal'] + $bal; 
      $balance = $_SESSION['bal'];
   }
 
- /*Sehrish Kantroo-1726406*/
+ 
 if($balance >= $payment){
+    if($balance == 0){
+      $status = "Null";
+    }
+    else{
     $remaining_balance = $balance - $payment;
     $_SESSION['bal']= $remaining_balance;
-    $status = "Successful";  /*Tahmida-1819216*/
+    $status = "Successful";}  //Tahmida-1819216
 }else{
   $payment = 0;
   $remaining_balance = $balance;
-  $status = "Unsuccessful";  /*Tahmida-1819216*/
+  $status = "Unsuccessful";  //Tahmida-1819216
 
 echo "<p style='color:red;font-size:20px' font-style:bold>You dont have sufficient balance to make payment. Please topup your account.</p>";
-}
-     /*Tahmida-1819216*/
+}//** }
+
+
+//##Tahmida Haque Sumbula-1819216{
 if($_payment =  $credit_card){
 
   $payment_type = "Credit Card";
@@ -172,22 +174,25 @@ if($date_of_transaction >= $start && $date_of_transaction <= $end) {
 
   $remaining_balance = (($balance - $payment) + ( $payment * 0.1));
 
+  echo "<p style='color:green;font-size:20px' font-style:bold>You have recieved a discount of 10% for off peak hours’usage.</p>";
+
 } else {
   
   $remaining_balance = $balance - $payment;
 
 }
-$date_of_transaction = date("Y-m-d H:i:s ");
+$date_of_transaction = date("Y-m-d H:i:s "); //##}
 
-     /*---Sehrish Kantroo-1726406---*/
+
+//**Sehrish Kantroo-1726406{ 
 //object
 $wallet_transac = new wallet();
 $wallet_transac->balance = $balance;
 $wallet_transac->payment = $payment;
 $wallet_transac->dot = $date_of_transaction;
 $wallet_transac->remainingBal = $remaining_balance;
-$wallet_transac->payment_type = $payment_type;
-$wallet_transac->status = $status;
+$wallet_transac->payment_type = $payment_type; //Tahmida Haque Sumbula-1819216
+$wallet_transac->status = $status; //Tahmida Haque Sumbula-1819216
 
 
 //array
@@ -203,10 +208,10 @@ array_push($_SESSION['transactions'], $wallet_transac);
 echo "<table class='table' table border='5' width='1250' margin-left: 'auto'
 margin-right:'auto' cellspacing='6' cellpadding ='6'>";
 echo "<tr bgcolor =' #1abc9c'>";
-echo "<th>Balance</th>";
-echo "<th>Payment</th>";
-echo "<th>Date of transaction</th>";
-echo "<th>Remaining balance</th>";
+echo "<th><center>Balance</center></th>";
+echo "<th><center>Payment</center></th>";
+echo "<th><center>Date of transaction</center></th>";
+echo "<th><center>Remaining balance</center></th>";
 echo "</tr>";
 
 //loop
@@ -223,20 +228,21 @@ $_remBal = $item->remainingBal;
 
 
 echo "<tr>";
-echo " <td><center> $_balance  </center></td> ";
-echo " <td><center>$$_payment</center></td> ";
+echo " <td><center>RM$_balance  </center></td> ";
+echo " <td><center>RM$_payment</center></td> ";
 echo " <td><center>$_dot</center></td> ";
-echo " <td><center>$_remBal</center></td> ";
+echo " <td><center>RM$_remBal</center></td> ";
 echo "</tr>";
 
 }
 echo "<div  id= 'container1'";
-echo "<label> Available Balance: $_remBal </label>";
+echo "<label> Available Balance:RM $_remBal </label>";
 echo"</div>";
 echo "</table>";
+                  //**}
 ?>
     
-   /*---Tahmida-1819216---*/
+   <!-- ##Tahmida Haque Sumbula-1819216{ -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -247,11 +253,11 @@ echo "</table>";
 echo "<br>";
 echo "<table class='table1' table border='5' width='800' cellspacing='6' cellpadding ='6'>";
 echo "<tr bgcolor =' #1abc9c'>";
-echo "<th>Top-Up Amount</th>";
-echo "<th>Payment</th>";
-echo "<th>Date of transaction</th>";
-echo "<th>Transaction type</th>";
-echo "<th>Payment Status</th>";
+echo "<th><center>Top-Up Amount</center></th>";
+echo "<th><center>Payment</center></th>";
+echo "<th><center>Date of transaction</center></th>";
+echo "<th><center>Transaction type</center></th>";
+echo "<th><center>Payment Status<center></th>";
 
 
 echo "</tr>";
@@ -268,8 +274,8 @@ $_paymenttype = $item->payment_type;
 $_status = $item->status;
 
 
-echo " <td><center>$$_balance</center></td> ";
-echo " <td><center>$$_payment</center></td> ";
+echo " <td><center>RM$_balance</center></td> ";
+echo " <td><center>RM$_payment</center></td> ";
 echo " <td><center>$_dot</center></td> ";
 echo " <td><center>$_paymenttype</center></td> ";
 echo " <td><center>$_status</center></td> ";
@@ -278,7 +284,7 @@ echo "</tr>";
   }
 
 echo "<div  id= 'container2'";
-echo "<label> Total Balance Left: $_remBal </label>";
+echo "<label> Total Balance Left: RM $_remBal </label>";
 echo"</div>";
 echo "<br>";
 
@@ -286,10 +292,6 @@ echo "</table>";
 echo "<br>";
 
 ?>
-
-
-
-
 
 </div>
 </body>
