@@ -8,7 +8,7 @@ a{
 	padding: 0!important;
 }
   
-//Tahmida-1819216
+/*Tahmida-1819216*/
 
 .table{
 	top: 15px;
@@ -46,7 +46,7 @@ a{
 		font-size: 30px;
 	  }
   
-  /* Style the submit button with a specific background color etc */
+  /* Sehrish Kantroo 1726406{ */
    #button1 {
 	background-color:  #1abc9c;
 	color: white;
@@ -60,12 +60,11 @@ a{
 
   }
   
-  /* When moving the mouse over the submit button, add a darker green color */
+  
    #button1:hover {
 	background-color:  #1abc9c;
   }
   
-  /* Add a background color and some padding around the form */
   #bal {
 	width: 90%; /* Full width */
 	padding: 12px; /* Some padding */ 
@@ -77,9 +76,7 @@ a{
 	resize: vertical 
   }
   
-  
-  
-  /* Style the submit button with a specific background color etc */
+
    #button2  {
 	background-color: #1abc9c;
 	color: white;
@@ -91,7 +88,6 @@ a{
 	font-size: medium;
   }
   
-  /* When moving the mouse over the submit button, add a darker green color */
   #button2:hover {
 	background-color:  #1abc9c;
   }
@@ -129,9 +125,9 @@ a{
     float: right;
 	padding: 20px;
 	width: 300px;
-  }
+  }/*}*/
 
-//Tahmida-1819216
+/*Tahmida-1819216*/
 
   #container2 {
 	border-radius: 5px;
