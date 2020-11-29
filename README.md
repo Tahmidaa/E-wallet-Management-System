@@ -22,5 +22,11 @@ Sehrish-
 1. It contains unlimited slots for storage.
 2. Each row can only store balance, payment, date of transaction and remaining amount.
 
+Hadil-
+1. Any e-Wallet top up with Credit Card will get RM 0.50 cash 
+back (extra 0.50 for each top up).
+2. User registration and authentication
 
 In this case study, we made an e-wallet management system which allows the user to pay bills via e-wallet balance, add balance and when topup is done via credit card cash back is added to the balance. It will show in the table how many transactions are made with its time and date. Also in another table it will show the montly history where the payment and transaction type, also the status will be shown.
+
+
