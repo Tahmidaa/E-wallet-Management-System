@@ -6,15 +6,17 @@ if(!isset($_SESSION['login_user'])){
   header("location:login.php");
   die();
 } 
- 
+
+//**Sehrish kantroo 1726406{
  class wallet{
 
   public $balance=0;
   public $payment=0;
   public $dot;
-  public $remainingBal=0;
-  public $payment_type;
-  public $status;
+  public $remainingBal=0; //**}
+   
+  public $payment_type; //Tahmida
+  public $status;//Tahmida
   
   }
 ?>
@@ -69,7 +71,7 @@ if(!isset($_SESSION['login_user'])){
 
   <br>
  
-
+ <!--**Sehrish Kantroo 1726406 -->
   <div class="container0">
     <table cellspacing='10' cellpadding ='0'>
     <td><form method = "post">
@@ -98,7 +100,8 @@ if(!isset($_SESSION['login_user'])){
     </form>
     </td>
     </table>
-  </div>
+  </div>  <!--** -->
+    
   <div class="container0" style="width: 700px;">
     <table cellspacing='10' cellpadding ='0'>  
     <td><form method = "post" >
@@ -111,7 +114,7 @@ if(!isset($_SESSION['login_user'])){
     </table>
   </div>
 
-
+//**Sehrish Kantroo 1726406{
 <?php
 
 error_reporting (E_ALL ^ E_NOTICE);  
@@ -119,41 +122,48 @@ error_reporting (E_ALL ^ E_NOTICE);
 
 $bal = $_POST["bal"];
 $payment = $_POST["payment"];
+$date_of_transaction = date("Y-m-d");//**}
+  
 $credit_card = $_POST["credit_card"];
-$date_of_transaction = date("Y-m-d");
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $time_of_transaction = date("H:i:s");
 
+//**Sehrish Kantroo 1726406{
 if(!isset($_SESSION['bal']))
   {
   $_SESSION['bal'] = 0;
   }
- 
-
-$_SESSION['bal']= $_SESSION['bal'] + $bal;
+ $_SESSION['bal']= $_SESSION['bal'] + $bal;
 $balance = $_SESSION['bal'];
 
 
-if($balance >= $payment){
+if($balance >= $payment){ //**}
+  
   if(isset($credit_card)) {
-    $remaining_balance = $balance - $payment;
+    $remaining_balance = $balance - $payment;//Sehrish
+    
     $remaining_balance+=0.5;
-    $_SESSION['bal']= $remaining_balance;
-    $status = "Successful";
+    
+    $_SESSION['bal']= $remaining_balance; //Sehrish
+    
+    $status = "Successful"; //Tahmida
   } else {
     $remaining_balance = $balance - $payment;
     $_SESSION['bal']= $remaining_balance;
-    $status = "Successful";
-
+    
+    $status = "Successful"; //Tahmida
   }
-}else{
-  $payment = 0;
-  $remaining_balance = $balance;
-  $status = "Unsuccessful";
-
+ 
+}else{ //Sehrish
+  $payment = 0; //Sehrish
+  $remaining_balance = $balance; //Sehrish
+  
+  $status = "Unsuccessful"; //Tahmida
+  
+//Sehrish
 echo "<p style='color:red;font-size:20px' font-style:bold>You dont have sufficient balance to make payment. Please topup your account.</p>";
-}
+} 
  
 //Tahmida-1819216  
   
@@ -182,16 +192,19 @@ if($date_of_transaction >= $start && $date_of_transaction <= $end) {
 $date_of_transaction = date("Y-m-d H:i:s ");
 
 //object
+//**Sehrish 1726406{
 $wallet_transac = new wallet();
 $wallet_transac->balance = $balance;
 $wallet_transac->payment = $payment;
 $wallet_transac->dot = $date_of_transaction;
-$wallet_transac->remainingBal = $remaining_balance;
-$wallet_transac->payment_type = $payment_type;
-$wallet_transac->status = $status;
+$wallet_transac->remainingBal = $remaining_balance; //**}
+  
+$wallet_transac->payment_type = $payment_type; //Tahmida
+$wallet_transac->status = $status;//Tahmida
 
 
 //array
+//**Sehrish 1726406{
 $_SESSION['transactions'][] = array();
 if (!isset($_SESSION['transactions'])) {
   $_SESSION['transactions'] = array();
@@ -235,7 +248,8 @@ echo "<div  id= 'container1'";
 echo "<label> Available Balance: $_remBal </label>";
 echo"</div>";
 echo "</table>";
-?>
+?> //**}
+  
   
 //Tahmida-1819216 
   
