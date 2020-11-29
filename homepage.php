@@ -252,10 +252,10 @@ echo "</table>";
 echo "<br>";
 echo "<table class='table1' table border='5' width='800' cellspacing='6' cellpadding ='6'>";
 echo "<tr bgcolor =' #1abc9c'>";
-echo "<th>Payment</th>";
-echo "<th>Date of transaction</th>";
-echo "<th>Payment type</th>";
-echo "<th>Payment Status</th>";
+echo "<th><center>Payment</center></th>";
+echo "<th><center>Date of transaction</center></th>";
+echo "<th><center>Payment type</center></th>";
+echo "<th><center>Payment Status</center></th>";
 
 echo "</tr>";
 
